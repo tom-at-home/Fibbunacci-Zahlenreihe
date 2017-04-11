@@ -11,7 +11,6 @@ namespace Fibbunacci_Zahlenreihe
 
     class Program
     {
-
         FibbunacciHandler fibbunacciHandler;
 
         static void Main(string[] args)
@@ -22,9 +21,8 @@ namespace Fibbunacci_Zahlenreihe
 
         public void Init()
         {
-            fibbunacciHandler = (i) => i == 0 ? 0 : i == 1 ? 1 : i == 2 ? 1 : fibbunacciHelperHandler();
-            fibbunacciHelperHandler = (grenze, a, b, i) => i == grenze ? a + b : fibbunacciHandler(grenze, a + b, , i + 1);
-
+            fibbunacciHandler = (i) => i == 0 ? 0 : i == 1 || i == 2 ? 1 : fibbunacciHandler(i-2) + fibbunacciHandler(i-1);
+            // Beispiel: 33 => 3 524 578
             Console.WriteLine(fibbunacciHandler(6));
             Console.ReadLine();
         }
