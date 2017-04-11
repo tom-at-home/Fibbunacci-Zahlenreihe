@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Fibbunacci_Zahlenreihe
 {
 
-    public delegate int FibbunacciHandler(int grenze, int a, int b, int i);
+    public delegate int FibbunacciHandler(int i);
 
     class Program
     {
@@ -22,8 +22,10 @@ namespace Fibbunacci_Zahlenreihe
 
         public void Init()
         {
-            fibbunacciHandler = (grenze, a, b, i) => i == grenze ? a + b : fibbunacciHandler(grenze, a+b, , i+1);
-            Console.WriteLine(fibbunacciHandler(6, 0, 1, 1));
+            fibbunacciHandler = (i) => i == 0 ? 0 : i == 1 ? 1 : i == 2 ? 1 : fibbunacciHelperHandler();
+            fibbunacciHelperHandler = (grenze, a, b, i) => i == grenze ? a + b : fibbunacciHandler(grenze, a + b, , i + 1);
+
+            Console.WriteLine(fibbunacciHandler(6));
             Console.ReadLine();
         }
     }
