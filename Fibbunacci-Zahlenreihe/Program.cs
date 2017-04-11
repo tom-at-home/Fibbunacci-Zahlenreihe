@@ -23,8 +23,8 @@ namespace Fibbunacci_Zahlenreihe
         {
             fibbunacciHandler = (i) => i == 0 ? 0 : i == 1 || i == 2 ? 1 : fibbunacciHandler(i-2) + fibbunacciHandler(i-1);
             // Beispiel: 33 => 3 524 578
-            Console.WriteLine(fibbunacciHandler(6));
-            Console.ReadLine();
+            Console.WriteLine(fibbunacciHandler(33));
+            //Console.ReadLine();
         }
     }
 }
